@@ -1,0 +1,6 @@
+   FD 60
+   LT 70
+   SET A := 40
+   LT 90
+   FD A
+}

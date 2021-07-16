@@ -1,0 +1,40 @@
+The extension attempted tries to implement a smarter error handling system compared
+to a plain old exit(), because I thought of this from the very start, the parser and
+interpreter don't have exit() in them. Instead I returned the error code through the
+functions and printed out errors upon hitting them.
+
+This leads to false positive errors for example when checking for a VARNUM, the
+function will first check if the word is a number, if this fails the error msg would print out
+to stderr and then the function would check if the word is a valid VAR. If it was a
+valid VAR the VARNUM function would return SUCCESS and carry on but judging from the
+console screen a user might be a little confused as to why an error was printed for their
+valid file. So I disabled comments for the parser and interpreter and print out a humble
+'not valid' to stderr in the event it isn't valid.
+
+I had originally used the return codes (0 and 1) as I thought I'd need them for this type of
+error handling. But when it came time to start the extension I went with making a
+validity var (in the structure) that keeps track of whether the code is still valid or not. This meant
+a lot of the functions return types (unsigned char) became redundant but I've kept them
+in anyway.
+
+I'm sure there's many errors I've overlooked but the extension should cover typos and
+missing syntax.
+
+The extension should first print any found errors to the console, then print your code, then state
+its not valid. I would have liked to implement a line numbering system as well, especially as I changed
+the way i scanned in words to leave an empty word for a newline but didn't have time.
+
+Unfortunately I've not done anywhere near enough testing for my extension as i'd liked/should
+have. With the new term coming tomorrow I'm happy to submit the project with the state its in
+and enjoy my last day.
+
+I've submitted proof that the code works for the files i tried on my machine, I'm expecting they
+work on your end but things like carriage returns (from my text editor atom, I'm pretty sure I've
+removed them from all important files) and the SDL accelerator/software might cause bugs that
+i haven't accounted for.
+
+Side note! (for Neill) You've been a great teacher/lecturer! Smashed the online component this year
+compared to others and the style of teaching is by far and away the best I've experienced (from undergrad
+to masters).
+
+All the best!

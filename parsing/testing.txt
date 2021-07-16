@@ -1,0 +1,37 @@
+!!!!!!!!!!WHAT I WROTE AS A TESTING STRATEGY BEFORE I STARTED:!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Implement program in the way suggested:
+
+Task 1: Parser
+* Initially make a dumbed down version of the parser, test each function as its made like usual (white box testing/unit testing)
+* Once the dumbed down parser is implemented, do a bit of general testing to check inputs for expected outputs (black box testing)
+* Once above is done, should know basic parser working so add the rest of the functionality, testing as funcs are made
+* Whole parser then needs testing in similar sort of black box way
+* PARSER HAS NO OUTPUT, only returns with SUCCESS or FAILURE (error messages?)
+
+Task 2: Interpreter
+* Add SDL output to the relevant parser functions, visually testing as added
+* Now test in black box way... expected outputs to given inputs (test harnessing?)
+
+Task 3: testing
+* Evaluate testing done so far, write about/report
+* Look for anything they may have been missed
+
+Task 4: Extension?
+* Think of some way to extend the parser/interpreter
+* Don't exit on finding errors, instead collate them by printing to the screen like a normal compiler would (gcc etc) then terminate at the end of scanning
+* Above means no exit() should be used until all errors detected
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Testing Summary:
+
+For the most part my testing followed the plan I've written above. Initially I got the basic
+parser example working, the functions were tested as I made them with some requiring other functions
+to be created in the middle of making them (meaning i created and tested those nested functions first).
+Once the basic parser was done I made the filescan function and a dummy.trtl to do some black box testing.
+Instead of saving each trtl file independently for the basic parser i just edited the dummy.trtl file to be
+a few different programs to confirm the basic parse was working as expected.
+
+Once I confirmed my basic parser was working I implemented the rest of the parser functionality, testing the
+funcs as I went... Again after the full parser was done I made 6 different valid files just to test they passed.
+Then 6 different bad ones to check they didn't pass... After that was done same plan was done with the interpreter,
+implement functions, test them move on. Testing SDL wasn't really done, I did visual tests on the valid files to make sure
+they were doing what was expected and iron out any bugs. Then moved onto the extension and did the same...

@@ -1,0 +1,10 @@
+{
+   DO A FROM 10 TO 20 {
+      LT A
+      FD 50
+   }
+   DO B FROM 9 TO 19 {
+      RT B
+      FD 49
+   }
+}
